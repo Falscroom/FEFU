@@ -1,0 +1,204 @@
+*,
+*:after,
+*::before {
+    box-sizing: border-box;
+}
+
+body  {
+	background: #1abc9c;
+}
+.bt-menu {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 0;
+	border: solid 0 #333;
+	background-color: rgba(0,0,0,0);
+	transition: border-width 0.3s, background-color 0.3s, height 0s 0.3s;
+}
+
+.bt-menu.bt-menu-open {
+	height: 100%;
+	border-width: 0 0 50px 150px;
+	background-color: rgba(0,0,0,0.3);
+	transition: border-width 0.3s, background-color 0.3s;
+}
+
+.bt-overlay {
+	position: absolute;
+	width: 100%;
+}
+
+.bt-menu-open .bt-overlay {
+	height: 100%;
+}
+
+.bt-menu-trigger {
+	position: fixed;
+	top: 10px;
+	left: 20px;
+	z-index: 100;
+	display: block;
+	width: 50px;
+	height: 50px;
+	cursor: pointer;
+}
+
+.bt-menu-trigger span {
+	position: absolute;
+	top: 50%;
+	left: 0;
+	display: block;
+	width: 100%;
+	height: 8%;
+	background-color: #fff;
+	font-size: 0;
+	transition: background-color 0.3s;
+}
+
+.bt-menu-trigger span:before,
+.bt-menu-trigger span:after {
+	position: absolute;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: #fff;
+	content: '';
+	transition: transform 0.3s;
+}
+
+.bt-menu-trigger span:before {
+	transform: translateY(-250%);
+}
+
+.bt-menu-trigger span:after {
+	transform: translateY(250%);
+}
+
+.bt-menu-open .bt-menu-trigger span:before {
+	transform: translateY(-300%);
+}
+
+.bt-menu-open .bt-menu-trigger span:after {
+	transform: translateY(300%);
+}
+
+.bt-menu ul {
+	position: fixed;
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+.bt-menu ul:first-of-type {
+	top: 75px;
+	left: 0;
+}
+
+.bt-menu ul:nth-of-type(2) {
+	right: 0;
+	bottom: 0;
+}
+
+.bt-menu ul li,
+.bt-menu ul li a {
+	display: block;
+}
+
+.bt-menu ul:nth-of-type(2) li {
+	float: left;
+	font-size: 0;
+}
+
+.bt-menu ul li {
+	visibility: hidden;
+	opacity: 0;
+	transition: transform 0.3s, opacity 0.2s, visibility 0s 0.3s;
+}
+
+.bt-menu.bt-menu-open ul:first-of-type li,
+.bt-menu.bt-menu-open ul:nth-of-type(2) li {
+	visibility: visible;
+	opacity: 1;
+	transition: transform 0.3s, opacity 0.3s;
+}
+
+/* First menu */
+.bt-menu ul:first-of-type li {
+	width: 150px;
+	height: 50px;
+	line-height: 50px;
+	transform: translate3d(-100%,50%,0);
+}
+
+.bt-menu.bt-menu-open ul:first-of-type li {
+	transform: translate3d(0,0,0);
+}
+
+/* Second menu */
+.bt-menu ul:nth-of-type(2) li {
+	width: 60px;
+	height: 50px;
+	line-height: 50px;
+	transform: scale(0);
+}
+
+.bt-menu.bt-menu-open ul:nth-of-type(2) li:first-child {
+	transition-delay: 0.1s;
+}
+
+.bt-menu.bt-menu-open ul:nth-of-type(2) li:nth-child(2) {
+	transition-delay: 0.2s;
+}
+
+.bt-menu.bt-menu-open ul:nth-of-type(2) li:nth-child(3) {
+	transition-delay: 0.3s;
+}
+
+.bt-menu.bt-menu-open ul:nth-of-type(2) li:nth-child(4) {
+	transition-delay: 0.4s;
+}
+
+.bt-menu.bt-menu-open ul:nth-of-type(2) li {
+	transform: scale(1);
+}
+
+.bt-menu ul li a {
+	display: block;
+	outline: none;
+	text-decoration: none;
+}
+
+.bt-menu ul:first-of-type li a {
+	padding: 0 20px;
+	box-shadow: inset 0 1px rgba(0,0,0,0.2);
+	color: #fff;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	font-size: 1em;
+	transition: color 0.2s;
+}
+
+.bt-menu ul:first-of-type li:last-child a {
+	box-shadow: inset 0 1px rgba(0,0,0,0.2), inset 0 -1px rgba(0,0,0,0.2);
+}
+
+.bt-menu ul:nth-of-type(2) li a {
+	color: transparent;
+	text-align: center;
+	font-size: 0;
+}
+
+.bt-menu ul li a:before {
+	color: #fff;
+	font-size: 24px;
+	transition: color 0.2s;
+}
+
+.bt-menu ul:first-of-type li a:hover,
+.bt-menu ul:first-of-type li a:focus,
+.bt-menu ul li a:hover:before,
+.bt-menu ul li a:focus:before {
+	color: #1abc9c;
+}

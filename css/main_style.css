@@ -1,0 +1,75 @@
+.container {
+    width: 100%;
+}
+.calendar_day {
+    overflow: hidden;
+    background-color: #1ABC89;
+    height: 150px;
+    border-right: solid 1px #087A58;
+    border-bottom: solid 1px #087A58;
+    padding: 4px;
+}
+.day {
+    height: 20%;
+}
+.calendar_day:hover {
+    background-color: #087A58;
+}
+.down .calendar_day { border-bottom: none; }
+.date {
+    height: 20%;
+}
+.list_events{
+    height: 80%;
+    overflow-y: scroll;
+    word-wrap: break-word;
+    margin-right: -30px;
+    padding-right:  30px;
+}
+.scroll_image {
+    opacity: 0;
+    position: absolute;
+    bottom: 5px;
+    right: 5px;
+    height: 10px;
+    width: 40px;
+    background-image: url(../images/scroll.png);
+    background-size: cover;
+}
+
+.form_container {
+    background-color: rgba(0,0,0,0.5);
+    display: none;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+}
+#event_name {
+    width: 65%;
+}
+#date {
+    width: 30%;
+    float: right;
+}
+#members_id,#description,#task,#group_name {
+    width: 100%;
+}
+
+.form-group > input {
+    display: inline-block;
+}
+.form-group > button {
+    margin-top: 5px;
+}
+form {
+    background-color: #087A58;
+    padding: 10px;
+    width: 40%;
+    border: solid 1px #000000;
+    position: relative;
+    margin: auto;
+}
+.create_event_show {
+    border-bottom: solid 1px #087A58;
+}
